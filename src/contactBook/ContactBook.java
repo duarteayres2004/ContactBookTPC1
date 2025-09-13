@@ -93,4 +93,11 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
+    // TODO
+    public Contact getContactByNumber(int phone) { return null; }
+
+    // TODO
+    public boolean hasDuplicatedPhones() { return false; }
+
+
 }
