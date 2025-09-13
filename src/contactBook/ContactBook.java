@@ -96,8 +96,20 @@ public class ContactBook {
     // TODO
     public Contact getContactByNumber(int phone) { return null; }
 
-    // TODO
-    public boolean hasDuplicatedPhones() { return false; }
+    // Verifica se existem contactos duplicados
+    public boolean hasDuplicatedPhones() {
+        int l = contacts.length;
+        for(int j=0;j<l;j++) {
+            for (int k = j + 1; k < l; k++) {
+                if (contacts[k].getPhone() == contacts[j].getPhone()) {
+                    return true;
+                }
+
+            }
+
+        }
+        return false;
+    }
 
 
 }
