@@ -96,21 +96,19 @@ public class ContactBook {
     // TODO
     public Contact getContactByNumber(int phone) { return null; }
 
-    // TODO
+    // Verifica se existem contactos duplicados
     public boolean hasDuplicatedPhones() {
-        boolean duplicates = false;
         int l = contacts.length;
         for(int j=0;j<l;j++) {
             for (int k = j + 1; k < l; k++) {
-                if (k != j && contacts[k].getPhone() == contacts[j].getPhone()) {
-                    duplicates = true;
-                    break;
+                if (contacts[k].getPhone() == contacts[j].getPhone()) {
+                    return true;
                 }
 
             }
 
         }
-        return duplicates;
+        return false;
     }
 
 
