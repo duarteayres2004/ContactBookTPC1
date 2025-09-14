@@ -6,3 +6,4 @@ p.2
 
 Duarte Ayres nº65246
 Tomás Rodrigues nº66126
+João Barata n 68004
