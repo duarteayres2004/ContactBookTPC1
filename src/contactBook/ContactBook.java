@@ -1,7 +1,5 @@
 package contactBook;
 
-import contactBook.Contact;
-
 public class ContactBook {
     static final int DEFAULT_SIZE = 100;
 
@@ -93,21 +91,30 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
-    // TODO
-    public Contact getContactByNumber(int phone) { return null; }
+    // Providencia o contacto associado a um determinado número de telefone
+    // Retorna null se não existir nenhum contacto com esse número
+    public Contact getContactByNumber(int phone) {
+        for (int i = 0; i < getNumberOfContacts(); i++) {
+            if (contacts[i].getPhone() == phone) {
+                return contacts[i];
+            }
+        }
+
+        return null;
+    }
 
     // Verifica se existem contactos duplicados
     public boolean hasDuplicatedPhones() {
-        int l = contacts.length;
+        int l = getNumberOfContacts();
+
         for(int j=0;j<l;j++) {
             for (int k = j + 1; k < l; k++) {
                 if (contacts[k].getPhone() == contacts[j].getPhone()) {
                     return true;
                 }
-
             }
-
         }
+
         return false;
     }
 
